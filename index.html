@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freenance</title>
+
+    <!--CSS and Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200;300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/rootVariables.css" />
+    <link rel="stylesheet" href="styles/boilerplate.css" />
+    <link rel="stylesheet" href="styles/landingPage.css" />
+    <script
+      src="https://kit.fontawesome.com/ebd4c0f83f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section>
+      <div class="bg-wrapper" id="hero-bg-wrapper">
+        <div class="bg-color gradient" id="hero-bg-color"></div>
+      </div>
+      <header id="navbar">
+        <div class="logo">Freenance</div>
+        <nav>
+          <ul class="nav-list">
+            <li>Pricing</li>
+            <li>Dashboard</li>
+          </ul>
+        </nav>
+        <button class="btn-primary" id="sign-in">
+          <div>Sign In</div>
+          <div class="icon">
+            <span></span>
+            <i class="fas fa-chevron-right fa-sm"></i>
+          </div>
+        </button>
+      </header>
+      <main>
+        <section class="hero">
+          <div class="hero-grid">
+            <div class="hero-left-info">
+              <h1 class="hero-title">
+                Easiest way to track all your finances in one place
+              </h1>
+              <p class="hero-text">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure
+                eaque sequi molestias dolorem nostrum minima velit quos neque
+                tenetur minus cumque voluptate cupiditate eius quisquam
+                molestiae, aperiam pariatur commodi sed.
+              </p>
+              <div class="hero-btns">
+                <button class="btn-primary" id="learn-more">
+                  <div>Learn More</div>
+                  <div class="icon">
+                    <span></span>
+                    <i class="fas fa-chevron-right fa-sm"></i>
+                  </div>
+                </button>
+                <button class="btn-primary" id="start-now">
+                  <div>Start Now</div>
+                  <div class="icon">
+                    <span></span>
+                    <i class="fas fa-chevron-right fa-sm"></i>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div id="hero-right-pictogram">
+              <div id="modal-wrapper">
+                <div class="transparent-modal" id="hero-dashboard">
+                  <div class="dashboard-header">
+                    <header>
+                      <h1>Freenance <span>Summary</span></h1>
+                      <p>Good afternoon, James Hudson!</p>
+                    </header>
+                    <div class="dashboard-searchbar">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                      <span>Search activity or other...</span>
+                    </div>
+                  </div>
+                  <div class="dashboard-header-right">
+                    <div class="notification-icon">
+                      <i class="fa-solid fa-circle"></i>
+                      <i class="fa-solid fa-message"></i>
+                    </div>
+                    <div class="profile-icon">
+                      <i class="fa-solid fa-user"></i>
+                    </div>
+                  </div>
+                  <div class="dashboard-menu">
+                    <i class="fa-brands fa-monero dashboard-logo"></i>
+                    <div class="menu-icons">
+                      <div class="menu-icon-wrapper">
+                        <i class="fa-solid fa-gauge"></i>
+                      </div>
+                      <div class="menu-icon-wrapper">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                      </div>
+                      <div class="menu-icon-wrapper">
+                        <i class="fa-solid fa-id-card"></i>
+                      </div>
+                      <div class="menu-icon-wrapper">
+                        <i class="fa-solid fa-wallet"></i>
+                      </div>
+                    </div>
+                    <i class="fa-solid fa-gear"></i>
+                  </div>
+                  <div class="dashboard-main">
+                    <div class="main-title">Your Total Balance</div>
+                    <div class="main-balance">
+                      <i class="fa-solid fa-dollar-sign"></i>102,412.42
+                    </div>
+                    <div class="main-date">
+                      march 24<i class="fa-solid fa-minus"></i>01:46 PM
+                    </div>
+                    <div class="main-balance-change">
+                      <i class="fa-solid fa-sort-up"></i
+                      ><i class="fa-solid fa-sort-down"></i>10.89<i
+                        class="fa-solid fa-percent"
+                      ></i>
+                    </div>
+                  </div>
+                  <div class="dashboard-main-right">
+                    <div class="main-right-header">Spending Activity</div>
+                    <div class="main-right-center">
+                      <div class="main-right-filter">
+                        Entertainment<i class="fa-solid fa-angle-down"></i>
+                      </div>
+                      <div class="main-right-amount">
+                        <i class="fa-solid fa-dollar-sign"></i>21.00
+                      </div>
+                    </div>
+                    <div class="main-right-note">
+                      <i class="fa-solid fa-comment-dollar"></i
+                      ><span>Monthly Netflix subscr</span>
+                    </div>
+                    <div class="main-right-button">Add Transaction</div>
+                  </div>
+                  <div class="dashboard-footer">
+                    <div class="footer-header">
+                      <div class="footer-title">Spending Analytic</div>
+                      <div class="footer-filter">
+                        <i class="fa-solid fa-calendar-week"></i>This Week<i
+                          class="fa-solid fa-angle-down"
+                          style="color: var(--colorGray)"
+                        ></i>
+                      </div>
+                    </div>
+                    <div class="footer-graph-container">
+                      <div class="footer-y-axis">
+                        <span>$0</span><span>$100</span><span>$200</span
+                        ><span>$400</span><span>$500</span>
+                      </div>
+                      <div class="footer-right-container">
+                        <div class="footer-graph">
+                          <div class="footer-graph-bg">
+                            <div class="footer-graph-rows"></div>
+                            <div class="footer-graph-rows"></div>
+                            <div class="footer-graph-rows"></div>
+                            <div class="footer-graph-rows"></div>
+                          </div>
+                          <div class="footer-bar-container">
+                            <div class="footer-bar-primary bar1-primary"></div>
+                            <div
+                              class="footer-bar-secondary bar1-secondary"
+                            ></div>
+                          </div>
+                          <div class="footer-bar-container">
+                            <div class="footer-bar-primary bar2-primary"></div>
+                            <div
+                              class="footer-bar-secondary bar2-secondary"
+                            ></div>
+                          </div>
+                          <div class="footer-bar-container">
+                            <div class="footer-bar-primary bar3-primary"></div>
+                            <div
+                              class="footer-bar-secondary bar3-secondary"
+                            ></div>
+                          </div>
+                          <div class="footer-bar-container">
+                            <div class="footer-bar-primary bar4-primary"></div>
+                            <div
+                              class="footer-bar-secondary bar4-secondary"
+                            ></div>
+                          </div>
+                          <div class="footer-bar-container">
+                            <div class="footer-bar-primary bar5-primary"></div>
+                            <div
+                              class="footer-bar-secondary bar5-secondary"
+                            ></div>
+                          </div>
+                          <div class="footer-bar-container">
+                            <div class="footer-bar-primary bar6-primary"></div>
+                            <div
+                              class="footer-bar-secondary bar6-secondary"
+                            ></div>
+                          </div>
+                          <div class="footer-bar-container">
+                            <div class="footer-bar-primary bar7-primary"></div>
+                            <div
+                              class="footer-bar-secondary bar7-secondary"
+                            ></div>
+                          </div>
+                          <div class="graph-border"></div>
+                        </div>
+                        <div class="footer-x-axis">
+                          <span>14 Mar</span><span>15 Mar</span
+                          ><span>16 Mar</span><span>17 Mar</span
+                          ><span>18 Mar</span><span>19 Mar</span
+                          ><span>20 Mar</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dashboard-sidebar">
+                    <div class="sidebar-header-goals">
+                      Your Goals<i class="fa-solid fa-ellipsis"></i>
+                    </div>
+                    <div class="sidebar-goals-card">
+                      <div
+                        class="goals-donut-chart"
+                        style="
+                          --percentage: 42;
+                          --border-thickness: 4px;
+                          --main-color: rgb(118, 37, 189);
+                          --secondary-color: rgb(129, 135, 220);
+                        "
+                      >
+                        42%
+                        <div class="chart-circles top-circles"></div>
+                        <div class="chart-circles bottom-circles"></div>
+                      </div>
+                      <div class="goals-info-container">
+                        <div class="goals-title">Disneyland Trip</div>
+                        <div class="goals-progress">$626 / 1,500</div>
+                      </div>
+                      <div class="goals-icon-container">
+                        <i class="fa-solid fa-angle-right"></i>
+                      </div>
+                    </div>
+                    <div class="sidebar-goals-card">
+                      <div
+                        class="goals-donut-chart"
+                        style="
+                          --percentage: 78;
+                          --border-thickness: 4px;
+                          --main-color: rgb(255, 0, 0);
+                          --secondary-color: rgba(247, 37, 133);
+                        "
+                      >
+                        78%
+                        <div class="chart-circles top-circles"></div>
+                        <div class="chart-circles bottom-circles"></div>
+                      </div>
+                      <div class="goals-info-container">
+                        <div class="goals-title">House Down Payment</div>
+                        <div class="goals-progress">$78,000 / 100,000</div>
+                      </div>
+                      <div class="goals-icon-container">
+                        <i class="fa-solid fa-angle-right"></i>
+                      </div>
+                    </div>
+                    <div class="sidebar-activity-container">
+                      <div class="activity-header">
+                        Recent activity<i class="fa-solid fa-ellipsis"></i>
+                      </div>
+                      <div class="activity-card">
+                        <div class="activity-left">
+                          <div class="activity-icon">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                          </div>
+                          <div class="activity-info-container">
+                            <div class="activity-title">Grocery Shopping</div>
+                            <div class="activity-date">
+                              14 Mar 2022, 11:41 AM
+                            </div>
+                          </div>
+                        </div>
+                        <div style="color: var(--colorGray)">- $128.23</div>
+                      </div>
+                      <div class="activity-card">
+                        <div class="activity-left">
+                          <div class="activity-icon">
+                            <i
+                              class="fa-solid fa-credit-card"
+                              style="font-size: 12px"
+                            ></i>
+                          </div>
+                          <div class="activity-info-container">
+                            <div class="activity-title">Recieved Zelle</div>
+                            <div class="activity-date">
+                              12 Mar 2022, 12:01 PM
+                            </div>
+                          </div>
+                        </div>
+                        <div>+ $500.00</div>
+                      </div>
+                      <div class="activity-card">
+                        <div class="activity-left">
+                          <div class="activity-icon">
+                            <i
+                              class="fa-brands fa-amazon-pay"
+                              style="font-size: 14px"
+                            ></i>
+                          </div>
+                          <div class="activity-info-container">
+                            <div class="activity-title">Xbox Controller</div>
+                            <div class="activity-date">
+                              11 Mar 2022, 5:46 PM
+                            </div>
+                          </div>
+                        </div>
+                        <div style="color: var(--colorGray)">- $47.58</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </section>
+  </body>
+</html>

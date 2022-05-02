@@ -1,0 +1,91 @@
+/* Strip elements of default values */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.gradient {
+  background-image: linear-gradient(
+    150deg,
+    var(--colorPrimary) 15%,
+    var(--colorSecondary) 70%,
+    var(--colorTertiary) 94%
+  );
+}
+.bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: -1;
+  overflow: hidden;
+}
+.bg-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.bg-color {
+  height: 100%;
+  width: 100%;
+}
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+.nav-list li {
+  margin-right: 5rem;
+  cursor: pointer;
+}
+.nav-list li:last-child {
+  margin-right: 0;
+}
+.btn-primary {
+  display: flex;
+  align-items: center;
+  border-radius: 3.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--textColorPrimary);
+  white-space: nowrap;
+}
+.btn-primary .icon {
+  display: flex;
+  align-items: center;
+  margin-left: 0.8rem;
+}
+.btn-primary .icon span {
+  position: relative;
+  width: 0.7rem;
+  height: 0.1rem;
+  background: var(--textColorPrimary);
+  opacity: 0;
+  border-radius: 5px;
+  transition: all 250ms ease;
+}
+
+.btn-primary .fa-chevron-right {
+  position: relative;
+  left: -0.7rem;
+  transition: all 250ms ease;
+}
+
+.btn-primary:hover .icon span {
+  opacity: 1;
+}
+
+.btn-primary:hover .icon .fa-chevron-right {
+  transform: translateX(5px);
+}
+.transparent-modal {
+  height: 100%;
+  width: 100%;
+  background: var(--bgColorPrimary);
+  border-radius: 8px;
+  box-shadow: 5px 10px 30px 2px rgba(0, 0, 0, 0.3);
+}

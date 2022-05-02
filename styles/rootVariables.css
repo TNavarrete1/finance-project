@@ -1,0 +1,25 @@
+/* CSS variables */
+:root {
+  /* Colors */
+  --colorPrimary: #53f;
+  --colorPrimaryAccent: #7625bd;
+  --colorSecondary: #05d5ff;
+  --colorTertiary: #a6ffcb;
+  --bgColorPrimary: rgba(255, 255, 255, 0.2);
+  --bgColorDark300: #90a5b6;
+  --bgColorDark: rgb(66, 84, 102);
+  --bgColorLight: rgb(230, 235, 241);
+  --colorGray: #bbcad8;
+  /* Text colors */
+  --textColorPrimary: #fff;
+  --textHoverColorPrimary: rgba(255, 255, 255, 0.7);
+  --textColorLight: rgb(230, 235, 241);
+  --textColorDark300: #90a5b6;
+  --textColorDark: rgb(66, 84, 102);
+  /* Button colors */
+  --buttonColorPrimary: rgba(255, 255, 255, 0.2);
+  --buttonColorHoverPrimary: rgba(255, 255, 255, 0.4);
+  /* Fonts */
+  --fontPrimary: "Rubik";
+  --fontSecondary: "Crimson Pro";
+}
