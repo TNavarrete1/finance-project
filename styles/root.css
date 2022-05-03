@@ -1,0 +1,27 @@
+/* Strip elements of default values */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+/* CSS variables */
+:root {
+  /* Colors */
+  --color-primary: #53f;
+  --color-primary-accent: #7625bd;
+  --color-secondary: #05d5ff;
+  --color-tertiary: #a6ffcb;
+  --color-dark: #425466;
+  --color-gray: #ccd7e0;
+  --color-light-gray: rgb(239, 244, 250);
+
+  /* Fonts */
+  --font-primary: "Rubik";
+  --font-secondary: "Crimson Pro";
+
+  /*  */
+  --max-width: 1080px;
+}
