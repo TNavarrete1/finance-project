@@ -11,10 +11,12 @@
 :root {
   /* Colors */
   --color-primary: #53f;
+  --color-primary-dark: rgb(65, 39, 198);
   --color-primary-accent: #7625bd;
   --color-secondary: #05d5ff;
   --color-tertiary: #a6ffcb;
   --color-dark: #425466;
+  --color-dark-blue: #023047;
   --color-gray: #ccd7e0;
   --color-light-gray: rgb(239, 244, 250);
 
@@ -22,6 +24,6 @@
   --font-primary: "Rubik";
   --font-secondary: "Crimson Pro";
 
-  /*  */
-  --max-width: 1080px;
+  /* layout */
+  --layout-max-width: 1080px;
 }
