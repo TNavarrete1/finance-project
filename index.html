@@ -21,26 +21,53 @@
     ></script>
   </head>
   <body>
-    <section>
+    <section class="layout-section">
       <div id="hero-bg-wrapper">
-        <div class="gradient" id="hero-bg-color"></div>
+        <div id="hero-bg-color"></div>
       </div>
-      <header id="navbar">
-        <a href="index.html" id="logo">Freenance</a>
-        <nav>
-          <ul id="nav-list">
-            <li>Pricing</li>
-            <li>Dashboard</li>
-          </ul>
-        </nav>
-        <button class="btn btn-primary">
-          <div>Sign In</div>
-          <div class="icon">
-            <span></span>
-            <i class="fas fa-chevron-right fa-sm"></i>
+      <div id="modal-container">
+        <div id="nav-modal">
+          <div id="modal-exit-icon">
+            <i class="fa-solid fa-xmark"></i>
           </div>
-        </button>
-      </header>
+          <ul id="modal-list">
+            <li>Pricing</li>
+            <span class="list-underline"></span>
+            <li>Dashboard</li>
+            <span class="list-underline"></span>
+            <button id="modal-button" class="btn btn-primary">
+              <div>Sign In</div>
+              <div class="icon">
+                <span></span>
+                <i class="fas fa-chevron-right fa-sm"></i>
+              </div>
+            </button>
+          </ul>
+        </div>
+      </div>
+      <div id="navbar-container">
+        <header id="navbar">
+          <a href="index.html" id="logo">Freenance</a>
+          <div id="nav-hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <nav>
+            <ul id="nav-list">
+              <li>Pricing</li>
+              <li>Dashboard</li>
+            </ul>
+          </nav>
+          <button id="nav-button" class="btn btn-primary">
+            <div>Sign In</div>
+            <div class="icon">
+              <span></span>
+              <i class="fas fa-chevron-right fa-sm"></i>
+            </div>
+          </button>
+        </header>
+      </div>
       <main>
         <section class="hero">
           <div class="hero-grid">
@@ -327,5 +354,6 @@
         </section>
       </main>
     </section>
+    <script src="./index.js"></script>
   </body>
 </html>
