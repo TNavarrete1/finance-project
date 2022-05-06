@@ -1,0 +1,30 @@
+#logo {
+  display: inline-block;
+  margin: 0 0 40px 24px;
+  font-size: 30px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#logo:hover {
+  color: var(--color-dark);
+}
+
+#layout-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  font-family: var(--font-primary);
+  color: var(--color-dark-blue);
+  background: var(--color-light-gray);
+}
+
+#sign-in-form {
+  padding: 30px;
+  width: 600px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.1);
+}

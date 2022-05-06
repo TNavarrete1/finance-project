@@ -225,6 +225,10 @@ button template ******************************
 #nav-list li:last-child {
   margin-right: 0;
 }
+#nav-button a {
+  color: #fff;
+  text-decoration: none;
+}
 
 /* media queries */
 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>signin</title>
+    <!--CSS and Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200;300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../../styles/root.css" />
+    <link rel="stylesheet" href="../../styles/signin.css" />
+
+    <script
+      src="https://kit.fontawesome.com/ebd4c0f83f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="layout-container">
+      <div>
+        <header id="logo">Freenance</header>
+
+        <form id="sign-in-form" action="/handleauth" method="post">
+          <h1>Sign in</h1>
+
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" />
+
+          <label for="password"
+            >Password
+            <a href="./forgotpassword.html">Forgot your password?</a></label
+          >
+          <input type="password" id="password" name="password" />
+
+          <button>Sign In</button>
+          <p><span></span>OR<span></span></p>
+          <button>SIGN IN WITH GOOGLE</button>
+          <button>SIGN IN WITH FACEBOOK</button>
+        </form>
+        <small>
+          Not a returning user?
+          <a href="./signup.html">Sign up</a>
+        </small>
+      </div>
+    </div>
+  </body>
+</html>
