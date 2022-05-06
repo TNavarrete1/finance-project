@@ -21,32 +21,28 @@
     ></script>
   </head>
   <body>
-    <section class="layout-section">
-      <div id="hero-bg-wrapper">
-        <div id="hero-bg-color"></div>
-      </div>
-      <div id="modal-container">
-        <div id="nav-modal">
-          <div id="modal-exit-icon">
-            <i class="fa-solid fa-xmark"></i>
-          </div>
-          <ul id="modal-list">
-            <li>Pricing</li>
-            <span class="list-underline"></span>
-            <li>Dashboard</li>
-            <span class="list-underline"></span>
-            <button id="modal-button" class="btn btn-primary">
-              <div>Sign In</div>
-              <div class="icon">
-                <span></span>
-                <i class="fas fa-chevron-right fa-sm"></i>
-              </div>
-            </button>
-          </ul>
+    <section id="viewport-wrapper">
+      <div id="hero-bg-color"></div>
+      <div id="nav-modal">
+        <div id="modal-exit-icon">
+          <i class="fa-solid fa-xmark"></i>
         </div>
+        <ul id="modal-list">
+          <li>Pricing</li>
+          <span class="list-underline"></span>
+          <li>Dashboard</li>
+          <span class="list-underline"></span>
+          <button id="modal-button" class="btn btn-primary">
+            <div>Sign In</div>
+            <div class="icon">
+              <span></span>
+              <i class="fas fa-chevron-right fa-sm"></i>
+            </div>
+          </button>
+        </ul>
       </div>
-      <div id="navbar-container">
-        <header id="navbar">
+      <div id="navbar-container" class="layout-container">
+        <header id="navbar" class="layout-content">
           <a href="index.html" id="logo">Freenance</a>
           <div id="nav-hamburger">
             <span></span>
@@ -68,20 +64,20 @@
           </button>
         </header>
       </div>
-      <main>
-        <section class="hero">
-          <div class="hero-grid">
-            <div class="hero-left-info">
-              <h1 class="hero-title">
+      <main class="layout-container">
+        <section class="layout-content">
+          <div id="hero-grid">
+            <div id="hero-left-info">
+              <h1 id="hero-title">
                 Easiest way to track all your finances in one place
               </h1>
-              <p class="hero-text">
+              <p id="hero-text">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure
                 eaque sequi molestias dolorem nostrum minima velit quos neque
                 tenetur minus cumque voluptate cupiditate eius quisquam
                 molestiae, aperiam pariatur commodi sed.
               </p>
-              <div class="hero-btns">
+              <div id="hero-btns">
                 <button class="btn btn-primary">
                   <div>Learn More</div>
                   <div class="icon">
@@ -98,254 +94,294 @@
                 </button>
               </div>
             </div>
-            <div id="hero-right-pictogram">
-              <div id="modal-wrapper">
-                <div class="transparent-modal" id="hero-dashboard">
-                  <div class="dashboard-header">
-                    <header>
-                      <h1>Freenance <span>Summary</span></h1>
-                      <p>Good afternoon, James Hudson!</p>
-                    </header>
-                    <div class="dashboard-searchbar">
-                      <i class="fa-solid fa-magnifying-glass"></i>
-                      <span>Search activity or other...</span>
+            <div id="hero-right-pictogram" class="transparent-modal">
+              <div id="pictogram-header">
+                <header>
+                  <h1>Freenance <span>Summary</span></h1>
+                  <p>Good afternoon, James Hudson!</p>
+                </header>
+                <div id="header-searchbar">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <span>Search activity or other...</span>
+                </div>
+              </div>
+              <div id="pictogram-header-right">
+                <div class="notification-icon">
+                  <i class="fa-solid fa-circle"></i>
+                  <i class="fa-solid fa-message"></i>
+                </div>
+                <div class="profile-icon">
+                  <i class="fa-solid fa-user"></i>
+                </div>
+              </div>
+              <div id="pictogram-nav">
+                <i id="pictogram-logo" class="fa-brands fa-monero"></i>
+                <div id="nav-icons">
+                  <div class="nav-icon-wrapper">
+                    <i class="fa-solid fa-gauge"></i>
+                  </div>
+                  <div class="nav-icon-wrapper">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                  </div>
+                  <div class="nav-icon-wrapper">
+                    <i class="fa-solid fa-id-card"></i>
+                  </div>
+                  <div class="nav-icon-wrapper">
+                    <i class="fa-solid fa-wallet"></i>
+                  </div>
+                </div>
+                <i class="fa-solid fa-gear"></i>
+              </div>
+              <div id="pictogram-main" class="pictogram-card">
+                <header id="main-title">Your Total Balance</header>
+                <h1 id="main-balance">
+                  <i class="fa-solid fa-dollar-sign"></i>102,412.42
+                </h1>
+                <p id="main-date">
+                  march 24<i class="fa-solid fa-minus"></i>01:46 PM
+                </p>
+                <p id="main-balance-change">
+                  <i class="fa-solid fa-sort-up"></i
+                  ><i class="fa-solid fa-sort-down"></i>10.89<i
+                    class="fa-solid fa-percent"
+                  ></i>
+                </p>
+              </div>
+              <div id="pictogram-main-right" class="pictogram-card">
+                <header id="main-right-header">Spending Activity</header>
+                <div id="main-right-center">
+                  <p id="main-right-filter">
+                    Entertainment<i class="fa-solid fa-angle-down"></i>
+                  </p>
+                  <p id="main-right-amount">
+                    <i class="fa-solid fa-dollar-sign"></i>21.00
+                  </p>
+                </div>
+                <p id="main-right-note">
+                  <i class="fa-solid fa-comment-dollar"></i
+                  ><span>Monthly Netflix subscr</span>
+                </p>
+                <button id="main-right-button">Add Transaction</button>
+              </div>
+              <div id="pictogram-footer" class="pictogram-card">
+                <div id="footer-header">
+                  <header id="footer-title">Spending Analytic</header>
+                  <h1 id="footer-filter">
+                    <i class="fa-solid fa-calendar-week"></i>This Week<i
+                      class="fa-solid fa-angle-down"
+                      style="color: var(--color-gray)"
+                    ></i>
+                  </h1>
+                </div>
+                <div id="footer-graph-container">
+                  <div id="footer-y-axis">
+                    <span>$0</span><span>$100</span><span>$200</span
+                    ><span>$400</span><span>$500</span>
+                  </div>
+                  <div id="footer-right-container">
+                    <div id="footer-graph">
+                      <div id="footer-graph-bg">
+                        <div class="footer-graph-rows"></div>
+                        <div class="footer-graph-rows"></div>
+                        <div class="footer-graph-rows"></div>
+                        <div class="footer-graph-rows"></div>
+                      </div>
+                      <div class="footer-bar-container">
+                        <div
+                          class="footer-bar-primary"
+                          style="height: 70%"
+                        ></div>
+                        <div
+                          class="footer-bar-secondary"
+                          style="height: 55%"
+                        ></div>
+                      </div>
+                      <div class="footer-bar-container">
+                        <div
+                          class="footer-bar-primary"
+                          style="height: 50%"
+                        ></div>
+                        <div
+                          class="footer-bar-secondary"
+                          style="height: 40%"
+                        ></div>
+                      </div>
+                      <div class="footer-bar-container">
+                        <div
+                          class="footer-bar-primary"
+                          style="height: 95%"
+                        ></div>
+                        <div
+                          class="footer-bar-secondary"
+                          style="height: 85%"
+                        ></div>
+                      </div>
+                      <div class="footer-bar-container">
+                        <div
+                          class="footer-bar-primary"
+                          style="height: 80%"
+                        ></div>
+                        <div
+                          class="footer-bar-secondary"
+                          style="height: 70%"
+                        ></div>
+                      </div>
+                      <div class="footer-bar-container">
+                        <div
+                          class="footer-bar-primary"
+                          style="height: 60%"
+                        ></div>
+                        <div
+                          class="footer-bar-secondary"
+                          style="height: 35%"
+                        ></div>
+                      </div>
+                      <div class="footer-bar-container">
+                        <div
+                          class="footer-bar-primary"
+                          style="height: 88%"
+                        ></div>
+                        <div
+                          class="footer-bar-secondary"
+                          style="height: 78%"
+                        ></div>
+                      </div>
+                      <div class="footer-bar-container">
+                        <div
+                          class="footer-bar-primary"
+                          style="height: 89%"
+                        ></div>
+                        <div
+                          class="footer-bar-secondary"
+                          style="height: 45%"
+                        ></div>
+                      </div>
+                      <div id="graph-bottom-border"></div>
+                    </div>
+                    <div id="footer-x-axis">
+                      <span>14 Mar</span><span>15 Mar</span><span>16 Mar</span
+                      ><span>17 Mar</span><span>18 Mar</span><span>19 Mar</span
+                      ><span>20 Mar</span>
                     </div>
                   </div>
-                  <div class="dashboard-header-right">
-                    <div class="notification-icon">
-                      <i class="fa-solid fa-circle"></i>
-                      <i class="fa-solid fa-message"></i>
-                    </div>
-                    <div class="profile-icon">
-                      <i class="fa-solid fa-user"></i>
-                    </div>
+                </div>
+              </div>
+              <div id="pictogram-sidebar" class="pictogram-card">
+                <header id="goals-header">
+                  Your Goals<i class="fa-solid fa-ellipsis"></i>
+                </header>
+                <div class="sidebar-goals-card">
+                  <div
+                    class="goals-donut-chart"
+                    style="
+                      --percentage: 42;
+                      --border-thickness: 0.25rem;
+                      --main-color: rgb(118, 37, 189);
+                      --secondary-color: rgb(129, 135, 220);
+                    "
+                  >
+                    42%
+                    <div class="chart-circles top-circles"></div>
+                    <div class="chart-circles bottom-circles"></div>
                   </div>
-                  <div class="dashboard-menu">
-                    <i class="fa-brands fa-monero dashboard-logo"></i>
-                    <div class="menu-icons">
-                      <div class="menu-icon-wrapper">
-                        <i class="fa-solid fa-gauge"></i>
-                      </div>
-                      <div class="menu-icon-wrapper">
-                        <i class="fa-solid fa-file-invoice-dollar"></i>
-                      </div>
-                      <div class="menu-icon-wrapper">
-                        <i class="fa-solid fa-id-card"></i>
-                      </div>
-                      <div class="menu-icon-wrapper">
-                        <i class="fa-solid fa-wallet"></i>
-                      </div>
-                    </div>
-                    <i class="fa-solid fa-gear"></i>
+                  <div class="goals-info-container">
+                    <h1 class="goals-title">Disneyland Trip</h1>
+                    <p class="goals-progress">$626 / 1,500</p>
                   </div>
-                  <div class="dashboard-main">
-                    <div class="main-title">Your Total Balance</div>
-                    <div class="main-balance">
-                      <i class="fa-solid fa-dollar-sign"></i>102,412.42
-                    </div>
-                    <div class="main-date">
-                      march 24<i class="fa-solid fa-minus"></i>01:46 PM
-                    </div>
-                    <div class="main-balance-change">
-                      <i class="fa-solid fa-sort-up"></i
-                      ><i class="fa-solid fa-sort-down"></i>10.89<i
-                        class="fa-solid fa-percent"
-                      ></i>
-                    </div>
+                  <div class="goals-icon-container">
+                    <i class="fa-solid fa-angle-right"></i>
                   </div>
-                  <div class="dashboard-main-right">
-                    <div class="main-right-header">Spending Activity</div>
-                    <div class="main-right-center">
-                      <div class="main-right-filter">
-                        Entertainment<i class="fa-solid fa-angle-down"></i>
-                      </div>
-                      <div class="main-right-amount">
-                        <i class="fa-solid fa-dollar-sign"></i>21.00
-                      </div>
-                    </div>
-                    <div class="main-right-note">
-                      <i class="fa-solid fa-comment-dollar"></i
-                      ><span>Monthly Netflix subscr</span>
-                    </div>
-                    <div class="main-right-button">Add Transaction</div>
+                </div>
+                <div class="sidebar-goals-card">
+                  <div
+                    class="goals-donut-chart"
+                    style="
+                      --percentage: 78;
+                      --border-thickness: 0.25rem;
+                      --main-color: rgb(255, 0, 0);
+                      --secondary-color: rgba(247, 37, 133);
+                    "
+                  >
+                    78%
+                    <div class="chart-circles top-circles"></div>
+                    <div class="chart-circles bottom-circles"></div>
                   </div>
-                  <div class="dashboard-footer">
-                    <div class="footer-header">
-                      <div class="footer-title">Spending Analytic</div>
-                      <div class="footer-filter">
-                        <i class="fa-solid fa-calendar-week"></i>This Week<i
-                          class="fa-solid fa-angle-down"
-                          style="color: var(--colorGray)"
+                  <div class="goals-info-container">
+                    <h1 class="goals-title">House Down Payment</h1>
+                    <p class="goals-progress">$78,000 / 100,000</p>
+                  </div>
+                  <div class="goals-icon-container">
+                    <i class="fa-solid fa-angle-right"></i>
+                  </div>
+                </div>
+                <div class="sidebar-activity-container">
+                  <header class="activity-header">
+                    Recent activity<i class="fa-solid fa-ellipsis"></i>
+                  </header>
+                  <div class="activity-card">
+                    <div class="activity-left">
+                      <div class="activity-icon">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                      </div>
+                      <div class="activity-info-container">
+                        <h1 class="activity-title">Grocery Shopping</h1>
+                        <small class="activity-date"
+                          >14 Mar 2022, 11:41 AM</small
+                        >
+                      </div>
+                    </div>
+                    <p style="color: var(--colorGray)">- $128.23</p>
+                  </div>
+                  <div class="activity-card">
+                    <div class="activity-left">
+                      <div class="activity-icon">
+                        <i
+                          class="fa-solid fa-credit-card"
+                          style="font-size: 12px"
                         ></i>
                       </div>
-                    </div>
-                    <div class="footer-graph-container">
-                      <div class="footer-y-axis">
-                        <span>$0</span><span>$100</span><span>$200</span
-                        ><span>$400</span><span>$500</span>
-                      </div>
-                      <div class="footer-right-container">
-                        <div class="footer-graph">
-                          <div class="footer-graph-bg">
-                            <div class="footer-graph-rows"></div>
-                            <div class="footer-graph-rows"></div>
-                            <div class="footer-graph-rows"></div>
-                            <div class="footer-graph-rows"></div>
-                          </div>
-                          <div class="footer-bar-container">
-                            <div class="footer-bar-primary bar1-primary"></div>
-                            <div
-                              class="footer-bar-secondary bar1-secondary"
-                            ></div>
-                          </div>
-                          <div class="footer-bar-container">
-                            <div class="footer-bar-primary bar2-primary"></div>
-                            <div
-                              class="footer-bar-secondary bar2-secondary"
-                            ></div>
-                          </div>
-                          <div class="footer-bar-container">
-                            <div class="footer-bar-primary bar3-primary"></div>
-                            <div
-                              class="footer-bar-secondary bar3-secondary"
-                            ></div>
-                          </div>
-                          <div class="footer-bar-container">
-                            <div class="footer-bar-primary bar4-primary"></div>
-                            <div
-                              class="footer-bar-secondary bar4-secondary"
-                            ></div>
-                          </div>
-                          <div class="footer-bar-container">
-                            <div class="footer-bar-primary bar5-primary"></div>
-                            <div
-                              class="footer-bar-secondary bar5-secondary"
-                            ></div>
-                          </div>
-                          <div class="footer-bar-container">
-                            <div class="footer-bar-primary bar6-primary"></div>
-                            <div
-                              class="footer-bar-secondary bar6-secondary"
-                            ></div>
-                          </div>
-                          <div class="footer-bar-container">
-                            <div class="footer-bar-primary bar7-primary"></div>
-                            <div
-                              class="footer-bar-secondary bar7-secondary"
-                            ></div>
-                          </div>
-                          <div class="graph-border"></div>
-                        </div>
-                        <div class="footer-x-axis">
-                          <span>14 Mar</span><span>15 Mar</span
-                          ><span>16 Mar</span><span>17 Mar</span
-                          ><span>18 Mar</span><span>19 Mar</span
-                          ><span>20 Mar</span>
-                        </div>
+                      <div class="activity-info-container">
+                        <h1 class="activity-title">Recieved Zelle</h1>
+                        <small class="activity-date"
+                          >12 Mar 2022, 12:01 PM</small
+                        >
                       </div>
                     </div>
+                    <p>+ $500.00</p>
                   </div>
-                  <div class="dashboard-sidebar">
-                    <div class="sidebar-header-goals">
-                      Your Goals<i class="fa-solid fa-ellipsis"></i>
-                    </div>
-                    <div class="sidebar-goals-card">
-                      <div
-                        class="goals-donut-chart"
-                        style="
-                          --percentage: 42;
-                          --border-thickness: 4px;
-                          --main-color: rgb(118, 37, 189);
-                          --secondary-color: rgb(129, 135, 220);
-                        "
-                      >
-                        42%
-                        <div class="chart-circles top-circles"></div>
-                        <div class="chart-circles bottom-circles"></div>
+                  <div class="activity-card">
+                    <div class="activity-left">
+                      <div class="activity-icon">
+                        <i
+                          class="fa-brands fa-amazon-pay"
+                          style="font-size: 14px"
+                        ></i>
                       </div>
-                      <div class="goals-info-container">
-                        <div class="goals-title">Disneyland Trip</div>
-                        <div class="goals-progress">$626 / 1,500</div>
-                      </div>
-                      <div class="goals-icon-container">
-                        <i class="fa-solid fa-angle-right"></i>
+                      <div class="activity-info-container">
+                        <h1 class="activity-title">Xbox Controller</h1>
+                        <small class="activity-date"
+                          >11 Mar 2022, 5:46 PM</small
+                        >
                       </div>
                     </div>
-                    <div class="sidebar-goals-card">
-                      <div
-                        class="goals-donut-chart"
-                        style="
-                          --percentage: 78;
-                          --border-thickness: 4px;
-                          --main-color: rgb(255, 0, 0);
-                          --secondary-color: rgba(247, 37, 133);
-                        "
-                      >
-                        78%
-                        <div class="chart-circles top-circles"></div>
-                        <div class="chart-circles bottom-circles"></div>
+                    <p style="color: var(--colorGray)">- $47.58</p>
+                  </div>
+                  <div class="activity-card">
+                    <div class="activity-left">
+                      <div class="activity-icon">
+                        <i
+                          class="fa-brands fa-amazon-pay"
+                          style="font-size: 14px"
+                        ></i>
                       </div>
-                      <div class="goals-info-container">
-                        <div class="goals-title">House Down Payment</div>
-                        <div class="goals-progress">$78,000 / 100,000</div>
-                      </div>
-                      <div class="goals-icon-container">
-                        <i class="fa-solid fa-angle-right"></i>
+                      <div class="activity-info-container">
+                        <h1 class="activity-title">Xbox Controller</h1>
+                        <small class="activity-date"
+                          >11 Mar 2022, 5:46 PM</small
+                        >
                       </div>
                     </div>
-                    <div class="sidebar-activity-container">
-                      <div class="activity-header">
-                        Recent activity<i class="fa-solid fa-ellipsis"></i>
-                      </div>
-                      <div class="activity-card">
-                        <div class="activity-left">
-                          <div class="activity-icon">
-                            <i class="fa-solid fa-bag-shopping"></i>
-                          </div>
-                          <div class="activity-info-container">
-                            <div class="activity-title">Grocery Shopping</div>
-                            <div class="activity-date">
-                              14 Mar 2022, 11:41 AM
-                            </div>
-                          </div>
-                        </div>
-                        <div style="color: var(--colorGray)">- $128.23</div>
-                      </div>
-                      <div class="activity-card">
-                        <div class="activity-left">
-                          <div class="activity-icon">
-                            <i
-                              class="fa-solid fa-credit-card"
-                              style="font-size: 12px"
-                            ></i>
-                          </div>
-                          <div class="activity-info-container">
-                            <div class="activity-title">Recieved Zelle</div>
-                            <div class="activity-date">
-                              12 Mar 2022, 12:01 PM
-                            </div>
-                          </div>
-                        </div>
-                        <div>+ $500.00</div>
-                      </div>
-                      <div class="activity-card">
-                        <div class="activity-left">
-                          <div class="activity-icon">
-                            <i
-                              class="fa-brands fa-amazon-pay"
-                              style="font-size: 14px"
-                            ></i>
-                          </div>
-                          <div class="activity-info-container">
-                            <div class="activity-title">Xbox Controller</div>
-                            <div class="activity-date">
-                              11 Mar 2022, 5:46 PM
-                            </div>
-                          </div>
-                        </div>
-                        <div style="color: var(--colorGray)">- $47.58</div>
-                      </div>
-                    </div>
+                    <p style="color: var(--colorGray)">- $47.58</p>
                   </div>
                 </div>
               </div>
