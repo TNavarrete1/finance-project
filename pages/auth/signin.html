@@ -23,27 +23,37 @@
   </head>
   <body>
     <div id="layout-container">
-      <div>
-        <header id="logo">Freenance</header>
-
+      <div id="layout-content">
+        <a id="logo" href="../../index.html">Freenance</a>
         <form id="sign-in-form" action="/handleauth" method="post">
-          <h1>Sign in</h1>
-
+          <h1>Sign In</h1>
           <label for="email">Email</label>
-          <input type="text" id="email" name="email" />
-
-          <label for="password"
+          <div class="input-container">
+            <i class="fa-regular fa-envelope"></i>
+            <input type="text" id="email" name="email" />
+          </div>
+          <label for="password" id="password-label"
             >Password
             <a href="./forgotpassword.html">Forgot your password?</a></label
           >
-          <input type="password" id="password" name="password" />
-
-          <button>Sign In</button>
-          <p><span></span>OR<span></span></p>
-          <button>SIGN IN WITH GOOGLE</button>
-          <button>SIGN IN WITH FACEBOOK</button>
+          <div class="input-container">
+            <i class="fa-solid fa-fingerprint"></i>
+            <input type="password" id="password" name="password" />
+          </div>
+          <button>SIGN IN</button>
+          <h1 id="center-header">
+            <span style="margin-right: 20px"></span>OR<span
+              style="margin-left: 20px"
+            ></span>
+          </h1>
+          <button id="google-button">
+            <i class="fa-brands fa-google"></i>SIGN IN WITH GOOGLE
+          </button>
+          <button id="facebook-button">
+            <i class="fa-brands fa-facebook-square"></i>SIGN IN WITH FACEBOOK
+          </button>
         </form>
-        <small>
+        <small id="form-footer">
           Not a returning user?
           <a href="./signup.html">Sign up</a>
         </small>
