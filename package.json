@@ -1,0 +1,26 @@
+{
+  "name": "finance",
+  "version": "1.0.0",
+  "description": "Main goal of this website is to allow a user to store their finances in one place where they can reference them later if needed. It also allows the user to get get some perspective on where their money is being spent, so they can adjust ther financials.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TNavarrete1/finance-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TNavarrete1/finance-project/issues"
+  },
+  "homepage": "https://github.com/TNavarrete1/finance-project#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.4"
+  }
+}
