@@ -4,8 +4,11 @@
   "description": "Main goal of this website is to allow a user to store their finances in one place where they can reference them later if needed. It also allows the user to get get some perspective on where their money is being spent, so they can adjust ther financials.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TNavarrete1/finance-project.git"
@@ -20,6 +23,8 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.4"
   }
