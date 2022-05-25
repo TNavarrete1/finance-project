@@ -1,5 +1,6 @@
 import Mongoose from "mongoose";
 
+// Structure of the user model
 const UserSchema = new Mongoose.Schema({
   email: {
     type: String,
