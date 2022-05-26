@@ -28,9 +28,9 @@
           <i class="fa-solid fa-xmark"></i>
         </div>
         <ul id="modal-list">
-          <li>Pricing</li>
+          <a href="/pricing">Pricing</a>
           <span class="list-underline"></span>
-          <li>Dashboard</li>
+          <a href="/dashboard">Dashboard</a>
           <span class="list-underline"></span>
           <button id="modal-button" class="btn btn-primary">
             <div>Sign In</div>
@@ -51,16 +51,29 @@
           </div>
           <nav>
             <ul id="nav-list">
-              <li>Pricing</li>
-              <li>Dashboard</li>
+              <a href="/pricing">Pricing</a>
+              <a href="/dashboard">Dashboard</a>
             </ul>
           </nav>
+          <% if (!user) { %>
           <a href="/login" id="nav-button" class="btn btn-primary"
             >Sign In
             <div class="icon">
               <span></span>
               <i class="fas fa-chevron-right fa-sm"></i></div
           ></a>
+          <% } %> <% if (user) { %>
+          <div id="profile-icon">
+            <i class="fa-regular fa-user"></i>
+            <i class="fa-solid fa-caret-down"></i>
+          </div>
+          <% } %>
+          <div id="profile-dropdown-menu">
+            <ul>
+              <a href="/">SETTINGS</a>
+              <a href="/logout">LOGOUT</a>
+            </ul>
+          </div>
         </header>
       </div>
       <main class="layout-container">

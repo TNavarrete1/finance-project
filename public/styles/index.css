@@ -109,7 +109,7 @@ button template ******************************
 }
 
 #nav-modal {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -123,7 +123,7 @@ button template ******************************
   transition: all 0.15s ease-in-out;
   z-index: 100;
 }
-.open {
+.openModal {
   transform: translateX(calc(-244px)) !important;
 }
 #modal-exit-icon {
@@ -146,13 +146,14 @@ button template ******************************
   width: 100%;
   list-style: none;
 }
-#modal-list li {
+#modal-list a {
   font-size: 1.1rem;
   font-family: var(--font-primary);
   color: var(--color-dark);
+  text-decoration: none;
   cursor: pointer;
 }
-#modal-list li:hover {
+#modal-list a:hover {
   color: #000;
 }
 #modal-list .list-underline {
@@ -200,9 +201,6 @@ button template ******************************
   color: #fff;
   font-family: var(--font-primary);
 }
-#navbar li:hover {
-  color: rgba(255, 255, 255, 0.7);
-}
 #logo {
   color: #fff;
   font-size: 24px;
@@ -217,27 +215,46 @@ button template ******************************
   display: flex;
   list-style: none;
 }
-#nav-list li {
+#nav-list a {
   margin-right: 80px;
   font-size: 16px;
+  text-decoration: none;
+  color: #fff;
   cursor: pointer;
 }
-#nav-list li:last-child {
+#nav-list a:last-child {
   margin-right: 0;
+}
+#nav-list a:hover {
+  color: rgba(255, 255, 255, 0.7);
 }
 #nav-button {
   color: #fff;
   text-decoration: none;
 }
 
+/* User profile and dropdown menu */
+#profile-icon {
+  cursor: pointer;
+}
+#profile-dropdown-menu {
+  display: none;
+}
+.openDropdown {
+  display: flex !important;
+}
+
 /* media queries */
 
 @media screen and (max-width: 700px) {
-  #nav-hamburger {
+  #nav-hamburger,
+  #nav-modal {
     display: flex;
   }
   #navbar nav,
-  #nav-button {
+  #nav-button,
+  #profile-icon,
+  #profile-dropdown-menu {
     display: none;
   }
 }

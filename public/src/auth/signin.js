@@ -5,7 +5,7 @@ const password = document.querySelector("#password");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   try {
-    const res = await fetch("/api/auth/register", {
+    const res = await fetch("/api/auth/login", {
       method: "POST",
       body: JSON.stringify({ email: email.value, password: password.value }),
       headers: { "Content-Type": "application/json" },
@@ -15,9 +15,8 @@ form.addEventListener("submit", async (e) => {
       window.alert(`${data.message}. ${data.error ? data.error : ""}`);
       return;
     }
-    data.role === "Admin"
-      ? location.assign("/admin")
-      : location.assign("/basic");
+
+    data.role === "Admin" ? location.assign("/admin") : location.assign("/");
   } catch (error) {
     console.log(error);
   }

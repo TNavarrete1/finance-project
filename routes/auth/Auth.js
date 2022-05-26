@@ -8,7 +8,7 @@ export const register = async (req, res, next) => {
   // Gets email and password from request object
   const { email, password } = req.body;
   // Checks if password meets length requirements
-  if (password.length < 6) {
+  if (password.length < 8) {
     res
       .status(400)
       .json({ message: "Password is less than 6 characters long" });

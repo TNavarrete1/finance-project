@@ -3,11 +3,14 @@ import "dotenv/config.js";
 import connectDB from "./db.js";
 import authRouter from "./routes/auth/Route.js";
 import pagesRouter from "./routes/pages/Route.js";
+import { checkUser } from "./middleware/auth.js";
 import express from "express";
 import cookieParser from "cookie-parser";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 
+// Path to freenance folder
+const root = dirname(fileURLToPath(import.meta.url));
 // Stores express's application object into variable app
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -15,16 +18,20 @@ const PORT = process.env.PORT || 5000;
 const server = app.listen(PORT, () => {
   console.log(`Connected on port ${PORT}`);
 });
-// Path to freenance folder
-const root = path.join(dirname(fileURLToPath(import.meta.url)), "..");
+
+// configures server view engine to be set to ejs
+app.set("view engine", "ejs");
+app.set("views", path.join(root, "views"));
 
 // Middleware
+// Serves static files from public folder
+app.use(express.static(path.join(root, "public")));
 // Parses json data on every incoming request
 app.use(express.json());
 // Parses cookies attached to client req object
 app.use(cookieParser());
-// Serves static files from client folder
-app.use(express.static(path.join(root, "client")));
+// Checks for user token in all routes
+app.use("*", checkUser);
 // Serves website pages
 app.use("/", pagesRouter);
 // Uses router's auth routes for incoming requests to auth api
