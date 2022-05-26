@@ -1,6 +1,8 @@
-import User from "../model/User.js";
-import bycrypt from "bcryptjs";
+import User from "../../model/User.js";
 import jwt from "jsonwebtoken";
+import bycrypt from "bcryptjs";
+
+const JWT_SECRET = process.env.JWT_SECRET;
 
 export const register = async (req, res, next) => {
   // Gets email and password from request object
@@ -14,16 +16,14 @@ export const register = async (req, res, next) => {
   }
   // Try to create a new user with requested email and password
   try {
-    // Generate a hashed password
-    const hash = await bycrypt.hash(password, 10);
     const user = await User.create({
       email,
-      password: hash,
+      password,
     });
     // Generate token with jwt
     const token = jwt.sign(
       { id: user._id, email, role: user.role },
-      process.env.JWT_SECRET,
+      JWT_SECRET,
       {
         expiresIn: "24h",
       }
@@ -37,6 +37,7 @@ export const register = async (req, res, next) => {
     res.status(201).json({
       message: "User successfully created",
       user: user._id,
+      role: user.role,
     });
   } catch (error) {
     res.status(401).json({
@@ -63,33 +64,35 @@ export const login = async (req, res, next) => {
         message: "Email or password is incorrect",
         error: "User not found",
       });
-    } else {
-      const passwordMatch = await bycrypt.compare(password, user.password);
-      if (passwordMatch) {
-        // Generate token with jwt
-        const token = jwt.sign(
-          { id: user._id, email, role: user.role },
-          process.env.JWT_SECRET,
-          {
-            expiresIn: "24h",
-          }
-        );
-        // Store token in a cookie
-        res.cookie("jwt", token, {
-          httpOnly: true,
-          maxAge: 24 * 3600 * 1000, // 24 hours in milliseconds
-        });
+      return;
+    }
+    const passwordMatch = await bycrypt.compare(password, user.password);
+    if (passwordMatch) {
+      // Generate token with jwt
+      const token = jwt.sign(
+        { id: user._id, email, role: user.role },
+        JWT_SECRET,
+        {
+          expiresIn: "24h",
+        }
+      );
+      // Store token in a cookie
+      res.cookie("jwt", token, {
+        httpOnly: true,
+        maxAge: 24 * 3600 * 1000, // 24 hours in milliseconds
+      });
 
-        res.status(201).json({
-          message: "User successfully logged in",
-          user: user._id,
-        });
-      } else {
-        res.status(401).json({
-          message: "Email or password is incorrect",
-          error: "User not found",
-        });
-      }
+      res.status(201).json({
+        message: "User successfully logged in",
+        user: user._id,
+        role: user.role,
+      });
+    } else {
+      console.log(user);
+      res.status(401).json({
+        message: "Email or password is incorrect",
+        error: "User not found",
+      });
     }
   } catch (error) {
     res.status(400).json({
@@ -109,7 +112,7 @@ export const update = async (req, res, next) => {
   }
   try {
     const user = await User.findById(id);
-    if (role === "admin") {
+    if (role === "Admin") {
       if (user.role !== role) {
         user.role = role;
         user

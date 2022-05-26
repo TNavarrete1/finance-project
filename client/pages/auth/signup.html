@@ -4,9 +4,63 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>signup</title>
+    <title>Register</title>
+    <!--CSS and Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200;300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/styles/root.css" />
+    <link rel="stylesheet" href="/styles/signin.css" />
+
+    <script
+      src="https://kit.fontawesome.com/ebd4c0f83f.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <h1>SignUp</h1>
+    <div id="layout-container">
+      <div id="layout-content">
+        <a id="logo" href="/">Freenance</a>
+        <form id="sign-in-form" action="/handleauth" method="post">
+          <h1>Sign Up</h1>
+          <label for="email">Email</label>
+          <div class="input-container">
+            <i class="fa-regular fa-envelope"></i>
+            <input type="text" id="email" name="email" placeholder="Email" />
+          </div>
+          <label for="password" id="password-label">Password</label>
+          <div class="input-container">
+            <i class="fa-solid fa-fingerprint"></i>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password (Must be at least 8 characters)"
+            />
+          </div>
+          <button>SIGN UP</button>
+          <h1 id="center-header">
+            <span style="margin-right: 20px"></span>OR<span
+              style="margin-left: 20px"
+            ></span>
+          </h1>
+          <button id="google-button">
+            <i class="fa-brands fa-google"></i>SIGN UP WITH GOOGLE
+          </button>
+          <button id="facebook-button">
+            <i class="fa-brands fa-facebook-square"></i>SIGN UP WITH FACEBOOK
+          </button>
+        </form>
+        <small id="form-footer">
+          Already have an account?
+          <a href="/login">Sign In</a>
+        </small>
+      </div>
+    </div>
   </body>
+  <script src="/src/auth/signup.js"></script>
 </html>
