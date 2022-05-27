@@ -18,14 +18,17 @@ const modal = () => {
 const checkUser = async () => {
   // Html elements
   const profileIcon = document.getElementById("profile-icon");
+  const caretIcon = profileIcon.lastElementChild;
   const profileDropdownMenu = document.getElementById("profile-dropdown-menu");
-  const caretIcon = document.getElementsByClassName("fa-caret-down");
+  console.log(caretIcon);
 
   const toggleDropdownMenu = () => {
     if (!profileDropdownMenu.classList.contains("openDropdown")) {
       profileDropdownMenu.classList.add("openDropdown");
+      caretIcon.style.transform = "rotate(180deg)";
     } else {
       profileDropdownMenu.classList.remove("openDropdown");
+      caretIcon.style.transform = "rotate(0deg)";
     }
   };
 
