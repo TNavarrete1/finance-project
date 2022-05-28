@@ -108,25 +108,36 @@ button template ******************************
   z-index: -1;
 }
 
+#modal-bg {
+  display: none;
+  position: absolute;
+  left: 100%;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out 0.15s;
+  z-index: 100;
+}
 #nav-modal {
   display: none;
   flex-direction: column;
   justify-content: flex-start;
   position: absolute;
-  top: 0;
   left: 100%;
   max-width: 450px;
   min-width: 220px;
-  width: 80%;
-  height: 100%;
+  width: 80vw;
+  height: 100vh;
   font-family: var(--font-primary);
   color: #fff;
   background: var(--color-dark-blue);
-  transition: all 0.2s ease-in-out;
+  transition: transform 0.25s ease-in-out;
   overflow: scroll;
   z-index: 100;
 }
 .openModal {
+  opacity: 1 !important;
   transform: translateX(-100%) !important;
 }
 #nav-modal header {
@@ -292,7 +303,8 @@ button template ******************************
 
 @media screen and (max-width: 700px) {
   #nav-hamburger,
-  #nav-modal {
+  #nav-modal,
+  #modal-bg {
     display: flex;
   }
   #navbar nav,

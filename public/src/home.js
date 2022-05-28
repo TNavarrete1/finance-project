@@ -3,19 +3,23 @@ const modal = () => {
   const modalExitBtn = document.getElementById("modal-exit-icon");
   const navHamburger = document.getElementById("nav-hamburger");
   const navModal = document.getElementById("nav-modal");
+  const navModalBg = document.getElementById("modal-bg");
 
   const toggleNavModal = () => {
     if (!navModal.classList.contains("openModal")) {
       navModal.classList.add("openModal");
+      navModalBg.classList.add("openModal");
       viewPort.style.overflowY = "hidden";
     } else {
       navModal.classList.remove("openModal");
+      navModalBg.classList.remove("openModal");
       viewPort.style.overflowY = "auto";
     }
   };
 
   navHamburger.addEventListener("click", toggleNavModal);
   modalExitBtn.addEventListener("click", toggleNavModal);
+  navModalBg.addEventListener("click", toggleNavModal);
 };
 
 const checkUser = async () => {
