@@ -110,55 +110,60 @@ button template ******************************
 
 #nav-modal {
   display: none;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
   position: absolute;
-  top: 10px;
-  right: -224px;
-  width: 224px;
-  height: 288px;
-  border-radius: 5px;
-  background: #fff;
-  box-shadow: 5px 10px 30px 2px rgba(0, 0, 0, 0.3);
-  transition: all 0.15s ease-in-out;
+  top: 0;
+  left: 100%;
+  max-width: 450px;
+  min-width: 220px;
+  width: 80%;
+  height: 100%;
+  font-family: var(--font-primary);
+  color: #fff;
+  background: var(--color-dark-blue);
+  transition: all 0.2s ease-in-out;
+  overflow: scroll;
   z-index: 100;
 }
 .openModal {
-  transform: translateX(calc(-244px)) !important;
+  transform: translateX(-100%) !important;
+}
+#nav-modal header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px;
+  width: 100%;
+  background-color: var(--color-dark);
 }
 #modal-exit-icon {
-  position: absolute;
-  top: 20px;
-  right: 25px;
   font-size: 1.5rem;
-  color: var(--color-dark);
   cursor: pointer;
-}
-#modal-exit-icon:hover {
-  color: #000;
 }
 #modal-list {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 60%;
+  align-items: flex-start;
+  padding: 15px 25px;
   width: 100%;
   list-style: none;
 }
 #modal-list a {
-  font-size: 1.1rem;
-  font-family: var(--font-primary);
-  color: var(--color-dark);
+  padding: 20px 0;
+  width: 100%;
+  font-size: 17px;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
 }
 #modal-list a:hover {
   color: #000;
 }
-#modal-list .list-underline {
-  width: 80%;
-  border-bottom: 2px dotted var(--color-gray);
+#list-spacer {
+  margin: 15px 0;
+  height: 1px;
+  width: 100%;
+  background: var(--color-gray);
 }
 #modal-button {
   margin-top: 38.4px;

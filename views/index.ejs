@@ -24,21 +24,32 @@
     <section id="viewport-wrapper">
       <div id="hero-bg-color"></div>
       <div id="nav-modal">
-        <div id="modal-exit-icon">
-          <i class="fa-solid fa-xmark"></i>
-        </div>
+        <header>
+          <a href="/" id="logo">Freenance</a>
+          <div id="modal-exit-icon">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </header>
         <ul id="modal-list">
           <a href="/pricing">Pricing</a>
           <span class="list-underline"></span>
           <a href="/dashboard">Dashboard</a>
-          <span class="list-underline"></span>
-          <button id="modal-button" class="btn btn-primary">
-            <div>Sign In</div>
-            <div class="icon">
-              <span></span>
-              <i class="fas fa-chevron-right fa-sm"></i>
-            </div>
-          </button>
+          <div id="list-spacer"></div>
+          <% if (!user) { %>
+          <a href="/login">Sign In</a>
+          <a
+            href="/register"
+            style="color: var(--color-tertiary); font-weight: 500"
+            >Sign Up</a
+          >
+          <% } %> <% if (user) { %>
+          <a href="/login">Account</a>
+          <a
+            href="/logout"
+            style="color: var(--color-tertiary); font-weight: 500"
+            >Sign Out</a
+          >
+          <% } %>
         </ul>
       </div>
       <div id="navbar-container" class="layout-container">
@@ -70,7 +81,7 @@
             </div>
             <div id="profile-dropdown-menu">
               <ul>
-                <a href="/">Settings</a>
+                <a href="/">Account</a>
                 <a href="/logout">Logout</a>
               </ul>
             </div>

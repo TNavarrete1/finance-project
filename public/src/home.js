@@ -1,4 +1,5 @@
 const modal = () => {
+  const viewPort = document.getElementById("viewport-wrapper");
   const modalExitBtn = document.getElementById("modal-exit-icon");
   const navHamburger = document.getElementById("nav-hamburger");
   const navModal = document.getElementById("nav-modal");
@@ -6,8 +7,10 @@ const modal = () => {
   const toggleNavModal = () => {
     if (!navModal.classList.contains("openModal")) {
       navModal.classList.add("openModal");
+      viewPort.style.overflowY = "hidden";
     } else {
       navModal.classList.remove("openModal");
+      viewPort.style.overflowY = "auto";
     }
   };
 
