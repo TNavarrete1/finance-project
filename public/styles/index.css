@@ -108,56 +108,73 @@ button template ******************************
   z-index: -1;
 }
 
-#nav-modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#modal-bg {
+  display: none;
   position: absolute;
-  top: 10px;
-  right: -224px;
-  width: 224px;
-  height: 288px;
-  border-radius: 5px;
-  background: #fff;
-  box-shadow: 5px 10px 30px 2px rgba(0, 0, 0, 0.3);
-  transition: all 0.15s ease-in-out;
+  left: 100%;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out 0.15s;
   z-index: 100;
 }
-.open {
-  transform: translateX(calc(-244px)) !important;
+#nav-modal {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: absolute;
+  left: 100%;
+  max-width: 450px;
+  min-width: 220px;
+  width: 80vw;
+  height: 100vh;
+  font-family: var(--font-primary);
+  color: #fff;
+  background: var(--color-dark-blue);
+  transition: transform 0.25s ease-in-out;
+  overflow: scroll;
+  z-index: 100;
+}
+.openModal {
+  opacity: 1 !important;
+  transform: translateX(-100%) !important;
+}
+#nav-modal header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px;
+  width: 100%;
+  background-color: var(--color-dark);
 }
 #modal-exit-icon {
-  position: absolute;
-  top: 20px;
-  right: 25px;
   font-size: 1.5rem;
-  color: var(--color-dark);
   cursor: pointer;
-}
-#modal-exit-icon:hover {
-  color: #000;
 }
 #modal-list {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 60%;
+  align-items: flex-start;
+  padding: 15px 25px;
   width: 100%;
   list-style: none;
 }
-#modal-list li {
-  font-size: 1.1rem;
-  font-family: var(--font-primary);
-  color: var(--color-dark);
+#modal-list a {
+  padding: 20px 0;
+  width: 100%;
+  font-size: 17px;
+  color: #fff;
+  text-decoration: none;
   cursor: pointer;
 }
-#modal-list li:hover {
+#modal-list a:hover {
   color: #000;
 }
-#modal-list .list-underline {
-  width: 80%;
-  border-bottom: 2px dotted var(--color-gray);
+#list-spacer {
+  margin: 15px 0;
+  height: 1px;
+  width: 100%;
+  background: var(--color-gray);
 }
 #modal-button {
   margin-top: 38.4px;
@@ -200,9 +217,6 @@ button template ******************************
   color: #fff;
   font-family: var(--font-primary);
 }
-#navbar li:hover {
-  color: rgba(255, 255, 255, 0.7);
-}
 #logo {
   color: #fff;
   font-size: 24px;
@@ -217,27 +231,85 @@ button template ******************************
   display: flex;
   list-style: none;
 }
-#nav-list li {
+#nav-list a {
   margin-right: 80px;
   font-size: 16px;
+  text-decoration: none;
+  color: #fff;
   cursor: pointer;
 }
-#nav-list li:last-child {
+#nav-list a:last-child {
   margin-right: 0;
+}
+#nav-list a:hover {
+  color: rgba(255, 255, 255, 0.7);
 }
 #nav-button {
   color: #fff;
   text-decoration: none;
 }
 
+/* User profile and dropdown menu */
+#account-nav {
+  position: relative;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+#profile-icon {
+  font-size: 18px;
+  cursor: pointer;
+}
+#profile-icon .fa-user {
+  font-size: 19px;
+  margin-right: 5px;
+}
+#profile-icon .fa-caret-down {
+  transition: all ease-in-out 0.2s;
+}
+#profile-dropdown-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 40px;
+  left: -150px;
+  padding: 30px;
+  height: 300px;
+  width: 200px;
+  border-radius: 5px;
+  background: var(--color-light-gray);
+  box-shadow: 5px 10px 30px 2px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+#profile-dropdown-menu a {
+  display: block;
+  text-align: center;
+  margin-bottom: 30px;
+  text-decoration: none;
+  font-family: var(--font-primary);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+#profile-dropdown-menu a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+.openDropdown {
+  display: flex !important;
+}
+
 /* media queries */
 
 @media screen and (max-width: 700px) {
-  #nav-hamburger {
+  #nav-hamburger,
+  #nav-modal,
+  #modal-bg {
     display: flex;
   }
   #navbar nav,
-  #nav-button {
+  #nav-button,
+  #account-nav {
     display: none;
   }
 }

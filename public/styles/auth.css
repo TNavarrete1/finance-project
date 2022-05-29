@@ -2,13 +2,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
   height: 100vh;
+  width: 100vw;
   background: var(--color-light-gray);
 }
 
 #layout-content {
-  margin: 0 auto;
+  margin: 15px auto;
   width: 94vw;
   max-width: 600px;
   font-family: var(--font-primary);
@@ -28,7 +28,7 @@
   color: var(--color-dark);
 }
 
-#sign-in-form {
+#form {
   display: flex;
   flex-direction: column;
   padding: 30px;
@@ -146,4 +146,16 @@ button:hover {
 #form-footer a {
   font-size: 16px;
   font-family: var(--font-secondary);
+}
+
+@media only screen and (max-width: 425px) {
+  #form {
+    padding: 30px 15px;
+  }
+}
+
+@media only screen and (max-height: 680px) {
+  #layout-container {
+    height: auto;
+  }
 }

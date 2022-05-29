@@ -23,22 +23,34 @@
   <body>
     <section id="viewport-wrapper">
       <div id="hero-bg-color"></div>
+      <div id="modal-bg"></div>
       <div id="nav-modal">
-        <div id="modal-exit-icon">
-          <i class="fa-solid fa-xmark"></i>
-        </div>
+        <header>
+          <a href="/" id="logo">Freenance</a>
+          <div id="modal-exit-icon">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </header>
         <ul id="modal-list">
-          <li>Pricing</li>
+          <a href="/pricing">Pricing</a>
           <span class="list-underline"></span>
-          <li>Dashboard</li>
-          <span class="list-underline"></span>
-          <button id="modal-button" class="btn btn-primary">
-            <div>Sign In</div>
-            <div class="icon">
-              <span></span>
-              <i class="fas fa-chevron-right fa-sm"></i>
-            </div>
-          </button>
+          <a href="/dashboard">Dashboard</a>
+          <div id="list-spacer"></div>
+          <% if (!user) { %>
+          <a href="/login">Sign In</a>
+          <a
+            href="/register"
+            style="color: var(--color-tertiary); font-weight: 500"
+            >Sign Up</a
+          >
+          <% } %> <% if (user) { %>
+          <a href="/login">Account</a>
+          <a
+            href="/logout"
+            style="color: var(--color-tertiary); font-weight: 500"
+            >Sign Out</a
+          >
+          <% } %>
         </ul>
       </div>
       <div id="navbar-container" class="layout-container">
@@ -51,16 +63,31 @@
           </div>
           <nav>
             <ul id="nav-list">
-              <li>Pricing</li>
-              <li>Dashboard</li>
+              <a href="/pricing">Pricing</a>
+              <a href="/dashboard">Dashboard</a>
             </ul>
           </nav>
+          <% if (!user) { %>
           <a href="/login" id="nav-button" class="btn btn-primary"
             >Sign In
             <div class="icon">
               <span></span>
               <i class="fas fa-chevron-right fa-sm"></i></div
           ></a>
+          <% } %> <% if (user) { %>
+          <div id="account-nav">
+            <div id="profile-icon">
+              <i class="fa-regular fa-user"></i>
+              <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div id="profile-dropdown-menu">
+              <ul>
+                <a href="/">Account</a>
+                <a href="/logout">Logout</a>
+              </ul>
+            </div>
+          </div>
+          <% } %>
         </header>
       </div>
       <main class="layout-container">

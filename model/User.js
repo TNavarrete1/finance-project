@@ -10,7 +10,7 @@ const UserSchema = new Mongoose.Schema({
   },
   password: {
     type: String,
-    minlength: 6,
+    minlength: 8,
     required: true,
   },
   role: {
@@ -21,6 +21,7 @@ const UserSchema = new Mongoose.Schema({
 });
 UserSchema.pre("save", async function (next) {
   try {
+    // Check if password isn't being modified
     if (!this.isModified("password")) return next();
     // Generate a hashed password
     const salt = await bycrypt.genSalt(10);
