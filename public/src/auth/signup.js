@@ -1,4 +1,6 @@
 const form = document.querySelector("form");
+const firstName = document.querySelector("#first-name");
+const lastName = document.querySelector("#last-name");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 
@@ -7,7 +9,12 @@ form.addEventListener("submit", async (e) => {
   try {
     const res = await fetch("/api/auth/register", {
       method: "POST",
-      body: JSON.stringify({ email: email.value, password: password.value }),
+      body: JSON.stringify({
+        firstName: firstName.value,
+        lastName: lastName.value,
+        email: email.value,
+        password: password.value,
+      }),
       headers: { "Content-Type": "application/json" },
     });
     const data = await res.json();

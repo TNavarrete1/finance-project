@@ -27,13 +27,13 @@
         <a id="logo" href="/">Freenance</a>
         <form id="form" action="/login" method="post">
           <h1>Sign In</h1>
-          <label for="email">Email</label>
+          <label for="email"></label>
           <div class="input-container">
             <i class="fa-regular fa-envelope"></i>
             <input type="text" id="email" name="email" placeholder="Email" />
           </div>
-          <label for="password" id="password-label"
-            >Password <a href="/forgotpassword">Forgot your password?</a></label
+          <label for="password" id="password-label">
+            <a href="/forgotpassword">Forgot your password?</a></label
           >
           <div class="input-container">
             <i class="fa-solid fa-fingerprint"></i>
@@ -44,7 +44,7 @@
               placeholder="Password"
             />
           </div>
-          <button>SIGN IN</button>
+          <button id="auth-button">SIGN IN</button>
           <h1 id="center-header">
             <span style="margin-right: 20px"></span>OR<span
               style="margin-left: 20px"
@@ -64,5 +64,6 @@
       </div>
     </div>
   </body>
-  <script src="/src/auth/signin.js"></script>
+  <script type="module" src="/src/shared.js"></script>
+  <script type="module" src="/src/auth/signin.js"></script>
 </html>

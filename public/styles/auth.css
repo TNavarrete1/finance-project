@@ -53,7 +53,7 @@ a {
 button {
   --color: #fff;
   --background-color: var(--color-primary);
-  --hover-background-color: var(--color-primary-dark);
+  --hover-background-color: var(--color-dark-primary);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,9 +75,17 @@ button:hover {
   background: var(--hover-background-color);
 }
 
+#name-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 17px;
+  text-align: center;
+}
+
 #password-label {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .input-container {
@@ -125,6 +133,10 @@ button:hover {
   border: 1px solid var(--color-gray);
 }
 
+#auth-button {
+  margin-top: 5px;
+}
+
 #google-button {
   --color: var(--color-dark-blue);
   --background-color: var(--color-gray);
@@ -151,6 +163,12 @@ button:hover {
 @media only screen and (max-width: 425px) {
   #form {
     padding: 30px 15px;
+  }
+  .input-container input {
+    padding: 16px 10px;
+  }
+  .input-container i {
+    padding: 8px 10px;
   }
 }
 

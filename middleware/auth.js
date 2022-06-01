@@ -56,6 +56,7 @@ export const checkUser = async (req, res, next) => {
     const decodedToken = jwt.verify(token, JWT_SECRET);
     const user = await User.findById(decodedToken.id);
     res.locals.user = {
+      firstName: user.firstName,
       email: user.email,
       role: user.role,
     };

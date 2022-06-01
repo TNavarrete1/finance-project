@@ -20,13 +20,18 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
+  <body data-page="home">
     <section id="viewport-wrapper">
       <div id="hero-bg-color"></div>
       <div id="modal-bg"></div>
       <div id="nav-modal">
         <header>
-          <a href="/" id="logo">Freenance</a>
+          <a href="/" id="modal-logo">Freenance</a>
+          <div class="themes">
+            <span class="theme-toggle"></span>
+            <i class="fa-solid fa-sun"></i>
+            <i class="fa-solid fa-moon"></i>
+          </div>
           <div id="modal-exit-icon">
             <i class="fa-solid fa-xmark"></i>
           </div>
@@ -56,16 +61,16 @@
       <div id="navbar-container" class="layout-container">
         <header id="navbar" class="layout-content">
           <a href="/" id="logo">Freenance</a>
-          <div id="nav-hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
           <nav>
             <ul id="nav-list">
               <a href="/pricing">Pricing</a>
               <a href="/dashboard">Dashboard</a>
             </ul>
+            <div class="themes">
+              <span class="theme-toggle"></span>
+              <i class="fa-solid fa-sun"></i>
+              <i class="fa-solid fa-moon"></i>
+            </div>
           </nav>
           <% if (!user) { %>
           <a href="/login" id="nav-button" class="btn btn-primary"
@@ -88,6 +93,11 @@
             </div>
           </div>
           <% } %>
+          <div id="nav-hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </header>
       </div>
       <main class="layout-container">
@@ -150,7 +160,7 @@
                     <i class="fa-solid fa-file-invoice-dollar"></i>
                   </div>
                   <div class="nav-icon-wrapper">
-                    <i class="fa-solid fa-id-card"></i>
+                    <i class="fa-solid fa-piggy-bank"></i>
                   </div>
                   <div class="nav-icon-wrapper">
                     <i class="fa-solid fa-wallet"></i>
@@ -416,6 +426,7 @@
         </section>
       </main>
     </section>
-    <script src="/src/home.js"></script>
+    <script type="module" src="/src/shared.js"></script>
+    <script type="module" src="/src/home.js"></script>
   </body>
 </html>

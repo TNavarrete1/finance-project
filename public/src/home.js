@@ -1,3 +1,4 @@
+import { toggleTheme } from "/src/shared.js";
 const modal = () => {
   const viewPort = document.getElementById("viewport-wrapper");
   const modalExitBtn = document.getElementById("modal-exit-icon");
@@ -22,13 +23,11 @@ const modal = () => {
   navModalBg.addEventListener("click", toggleNavModal);
 };
 
-const checkUser = async () => {
+const checkUser = () => {
   // Html elements
   const profileIcon = document.getElementById("profile-icon");
   const caretIcon = profileIcon.lastElementChild;
   const profileDropdownMenu = document.getElementById("profile-dropdown-menu");
-  console.log(caretIcon);
-
   const toggleDropdownMenu = () => {
     if (!profileDropdownMenu.classList.contains("openDropdown")) {
       profileDropdownMenu.classList.add("openDropdown");
@@ -44,6 +43,7 @@ const checkUser = async () => {
 
 function main() {
   modal();
+  toggleTheme();
   checkUser();
 }
 

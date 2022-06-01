@@ -6,7 +6,7 @@ const JWT_SECRET = process.env.JWT_SECRET;
 
 export const register = async (req, res, next) => {
   // Gets email and password from request object
-  const { email, password } = req.body;
+  const { firstName, lastName, email, password } = req.body;
   // Checks if password meets length requirements
   if (password.length < 8) {
     res
@@ -17,6 +17,8 @@ export const register = async (req, res, next) => {
   // Try to create a new user with requested email and password
   try {
     const user = await User.create({
+      firstName,
+      lastName,
       email,
       password,
     });
