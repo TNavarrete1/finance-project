@@ -39,7 +39,7 @@
             <div id="data-filter">
               <i class="fa-regular fa-calendar"></i>
               <div id="filter-picker">
-                <span id="filter-text">7 days</span>
+                <span id="filter-text">Yesterday</span>
                 <i class="fa-solid fa-chevron-down"></i>
               </div>
             </div>
@@ -54,6 +54,96 @@
             <a href="/logout" class="circle-options">
               <i class="fa-solid fa-arrow-right-from-bracket"></i>
             </a>
+
+            <div
+              id="calender"
+              style="
+                --calender-base-height: 350px;
+                --calender-max-height: 436px;
+                --calender-height: 350px;
+                --calender-width: 300px;
+              "
+            >
+              <ul id="month-list">
+                <li><span data-month="0">January</span></li>
+                <li><span data-month="01">February</span></li>
+                <li><span data-month="02">March</span></li>
+                <li><span data-month="03">April</span></li>
+                <li><span data-month="04">May</span></li>
+                <li><span data-month="05">June</span></li>
+                <li><span data-month="06">July</span></li>
+                <li><span data-month="07">August</span></li>
+                <li><span data-month="08">September</span></li>
+                <li><span data-month="09">October</span></li>
+                <li><span data-month="10">November</span></li>
+                <li><span data-month="11">December</span></li>
+              </ul>
+              <div
+                id="month"
+                style="
+                  --grid-columns: 7;
+                  --grid-rows: 6;
+                  --grid-width: 300px;
+                  --grid-height: 250px;
+                  --grid-gap: 3px;
+                "
+              >
+                <header id="month-header">
+                  <div id="header-info-container">
+                    <button id="prev-month-button">
+                      <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <h1 id="month-button">
+                      <span id="month-title"></span>
+                      <span id="year-title">2022</span>
+                    </h1>
+                    <button id="next-month-button">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                  </div>
+                  <ul>
+                    <li>Sun</li>
+                    <li>Mon</li>
+                    <li>Tue</li>
+                    <li>Wed</li>
+                    <li>Thu</li>
+                    <li>Fri</li>
+                    <li>Sat</li>
+                  </ul>
+                </header>
+                <div id="days-container">
+                  <div
+                    id="days-sliding-window"
+                    style="
+                      --sliding-window-transition: none;
+                      --sliding-window-transform: none;
+                    "
+                  >
+                    <ul class="days-list" data-list-for-month="0"></ul>
+                    <ul class="days-list" data-list-for-month="1"></ul>
+                    <ul class="days-list" data-list-for-month="2"></ul>
+                    <ul class="days-list" data-list-for-month="3"></ul>
+                    <ul class="days-list" data-list-for-month="4"></ul>
+                    <ul class="days-list" data-list-for-month="5"></ul>
+                    <ul class="days-list" data-list-for-month="6"></ul>
+                    <ul class="days-list" data-list-for-month="7"></ul>
+                    <ul class="days-list" data-list-for-month="8"></ul>
+                    <ul class="days-list" data-list-for-month="9"></ul>
+                    <ul class="days-list" data-list-for-month="10"></ul>
+                    <ul class="days-list" data-list-for-month="11"></ul>
+                  </div>
+                </div>
+                <div id="month-footer">
+                  <ul id="filter-list">
+                    <li data-filter="1" class="filter-active">1 day</li>
+                    <li data-filter="7">7 days</li>
+                    <li data-filter="14">14 days</li>
+                    <li data-filter="0">1 month</li>
+                  </ul>
+                  <button id="set-filter-button">Set Filter</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </header>
