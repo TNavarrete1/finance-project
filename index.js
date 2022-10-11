@@ -1,6 +1,7 @@
 // Loads .env varibles into process.env
 import "dotenv/config.js";
 import connectDB from "./db.js";
+import transactionRouter from "./routes/transactions/Route.js";
 import authRouter from "./routes/auth/Route.js";
 import pagesRouter from "./routes/pages/Route.js";
 import { checkUser } from "./middleware/auth.js";
@@ -36,6 +37,8 @@ app.use("*", checkUser);
 app.use("/", pagesRouter);
 // Uses router's auth routes for incoming requests to auth api
 app.use("/api/auth/", authRouter);
+// Handles requrests for graph data
+app.use("/api/transactions/", transactionRouter);
 
 // Connects to MongoDB Atlas
 connectDB();

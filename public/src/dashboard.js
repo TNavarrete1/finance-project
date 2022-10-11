@@ -2,10 +2,10 @@ import { toggleTheme } from "/src/shared.js";
 
 const toggleSidebarIcon = () => {
   // Handles sidebar icon clicks
-  const handleClick = async function (e) {
+  const handleClick = (e) => {
     // Get elements
     const activeIcon = document.querySelector(".sidebar-icon-active");
-    const currIcon = await e.currentTarget;
+    const currIcon = e.currentTarget;
     const activePanel = document.querySelector(".panel-open");
     const currPanel = document.querySelector(
       `#panel-${currIcon.dataset.panel}`
@@ -79,34 +79,6 @@ const loadCalender = () => {
   Setter Methods 
   */
 
-  // Loads current month with data
-  const preloadMonthData = () => {
-    /*
-      Loads onto month element:
-        1. Inserts title of current month
-        2. Moves sliding window to current month
-        3. Activates current month's dayList element
-        4. Activates current day element in daysList
-        5. Set's calender height to it's max height to fit all the month data
-          when calender opens
-    */
-    const date = new Date();
-    // Fill Month title to current month name
-    monthTitle.innerHTML = monthsArr[date.getMonth()];
-    // Move dayList across to correct month
-    daysSlidingWindow.style.setProperty(
-      "--sliding-window-transform",
-      `translateX(calc(-1px * ${parseInt(gridWidth) * date.getMonth()}))`
-    );
-    // Add days-list-active class to current month's daysList
-    daysList[date.getMonth()].classList.add("days-list-active");
-    // Activats present day in daysList
-    daysList[date.getMonth()]
-      .querySelectorAll(`[data-day-for-month="${date.getMonth()}"]`)
-      [date.getDate() - 2].classList.add("day-active");
-    // Sets calender's initial height
-    calender.style.setProperty("--calender-height", `${calenderMaxHeight}`);
-  };
   // Populates each daysList element with a list of days
   const populateDaysList = () => {
     /*
@@ -163,6 +135,34 @@ const loadCalender = () => {
         daysList[currMonth].append(li);
       }
     }
+  };
+  // Loads current month with data
+  const preloadMonthData = () => {
+    /*
+        Loads onto month element:
+          1. Inserts title of current month
+          2. Moves sliding window to current month
+          3. Activates current month's dayList element
+          4. Activates current day element in daysList
+          5. Set's calender height to it's max height to fit all the month data
+            when calender opens
+      */
+    const date = new Date();
+    // Fill Month title to current month name
+    monthTitle.innerHTML = monthsArr[date.getMonth()];
+    // Move dayList across to correct month
+    daysSlidingWindow.style.setProperty(
+      "--sliding-window-transform",
+      `translateX(calc(-1px * ${parseInt(gridWidth) * date.getMonth()}))`
+    );
+    // Add days-list-active class to current month's daysList
+    daysList[date.getMonth()].classList.add("days-list-active");
+    // Activats present day in daysList
+    daysList[date.getMonth()]
+      .querySelectorAll(`[data-day-for-month="${date.getMonth()}"]`)
+      [date.getDate() - 1].classList.add("day-active");
+    // Sets calender's initial height
+    calender.style.setProperty("--calender-height", `${calenderMaxHeight}`);
   };
   const changeMonth = (nextMonth) => {
     /*
@@ -232,6 +232,15 @@ const loadCalender = () => {
         "--sliding-window-transition",
         "none"
       );
+
+      // Deactivates nav button for next month if a month on the side is inacessible
+      const prevMonthButton = document.querySelector("#prev-month-button");
+      const nextMonthButton = document.querySelector("#next-month-button");
+      if (nextMonth === 0) {
+        prevMonthButton.classList.add("inactive-button");
+      } else if (nextMonth === 11) {
+        nextMonthButton.classList.add("inactive-button");
+      }
       changeMonth(nextMonth);
       return;
     } else if (
@@ -287,6 +296,12 @@ const loadCalender = () => {
     const monthButton = document.querySelector("#month-button");
 
     const handleClick = () => {
+      // Removes inactive class from nav buttons
+      const prevMonthButton = document.querySelector("#prev-month-button");
+      const nextMonthButton = document.querySelector("#next-month-button");
+      prevMonthButton.classList.remove("inactive-button");
+      nextMonthButton.classList.remove("inactive-button");
+      // Deactivates month element and activates month list
       month.classList.remove("month-open");
       monthList.classList.add("month-list-open");
       // Reduce calender height
@@ -335,10 +350,8 @@ const loadCalender = () => {
 
       // Deactivate when months will become inacessible in either direction
       if (nextMonth === 0) {
-        console.log("inactive");
         prevMonthButton.classList.add("inactive-button");
       } else if (nextMonth === 11) {
-        console.log("inactive");
         nextMonthButton.classList.add("inactive-button");
       } else {
         prevMonthButton.classList.remove("inactive-button");
@@ -445,10 +458,158 @@ const loadCalender = () => {
   submitFilter();
 };
 
-const main = function () {
-  toggleTheme();
+const loadSavingsGraph = () => {
+  // ctx Object
+  const ctx = document.getElementById("myChart").getContext("2d");
 
-  toggleSidebarIcon();
-  loadCalender();
+  // Gradient
+  const gradient = ctx.createLinearGradient(0, 0, 0, 350);
+  gradient.addColorStop(0, "rgba(14, 173, 105, 1)");
+  gradient.addColorStop(1, "rgba(14, 173, 105,0)");
+
+  // CSS var variables
+  let globalStyles = getComputedStyle(document.body);
+  let primFont = globalStyles.getPropertyValue("--font-primary");
+  let colorDark = globalStyles.getPropertyValue("--color-dark");
+
+  // Chart config
+  const myChart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      datasets: [
+        {
+          label: "May 1 - May 7",
+          data: [12, 19, 3, 5, 2, 3, 25],
+          backgroundColor: gradient,
+          fill: true,
+          tension: 0.25,
+        },
+      ],
+    },
+    options: {
+      elements: {
+        line: {
+          borderColor: "rgb(75, 192, 192)",
+          borderWidth: 3,
+        },
+      },
+      layout: {
+        padding: 0,
+      },
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: true,
+          align: "end",
+          labels: {
+            color: colorDark,
+            font: {
+              size: 14,
+              family: primFont,
+              weight: "400",
+            },
+          },
+        },
+      },
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true,
+          grid: {
+            display: false,
+          },
+          ticks: {
+            display: true,
+            color: colorDark,
+            font: {
+              size: 13,
+              family: primFont,
+              weight: "400",
+            },
+            padding: 10,
+          },
+        },
+        x: {
+          grid: {
+            display: false,
+          },
+          ticks: {
+            display: true,
+            color: colorDark,
+            font: {
+              size: 13,
+              family: primFont,
+              weight: "400",
+            },
+            padding: 10,
+          },
+        },
+      },
+    },
+  });
+
+  const themeButton = document.querySelector(".themes");
+  themeButton.addEventListener("click", (e) => {
+    // Gets theme values
+    globalStyles = getComputedStyle(document.body);
+    colorDark = globalStyles.getPropertyValue("--color-dark");
+    // Update chart colors when theme changes
+    myChart.options.plugins.legend.labels.color = colorDark;
+    myChart.options.scales.y.ticks.color = colorDark;
+    myChart.options.scales.x.ticks.color = colorDark;
+
+    myChart.update();
+  });
 };
+
+const handleTransactionSubmit = () => {
+  const form = document.querySelector("#transaction-form");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch("/api/transactions/create", {
+        method: "POST",
+        body: JSON.stringify({
+          category: "savings",
+          date: "2022-06-25",
+          price: 600,
+          title: "Deposit",
+        }),
+        headers: { "Content-Type": "application/json" },
+      });
+      const data = await res.json();
+      if (res.status === 400 || res.status === 401) {
+        window.alert(`${data.message}. ${data.error ? data.error : ""}`);
+        return;
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  });
+};
+
+const main = function () {
+  // Toggles light and dark theme
+  toggleTheme();
+  // Toggles sidebar icons to switch panels
+  toggleSidebarIcon();
+  // Loads calender functionality
+  loadCalender();
+
+  // Loads graphs
+  loadSavingsGraph();
+
+  // Handles creating, updating, and deleting of transactions
+  handleTransactionSubmit();
+};
+
 main();

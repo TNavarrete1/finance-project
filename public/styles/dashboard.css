@@ -411,21 +411,156 @@
   margin-top: auto;
 }
 
-#panel-1,
-#panel-2,
-#panel-3,
-#panel-4,
-#panel-5 {
-  display: none;
-}
 .panel-open {
-  display: block !important;
-  grid-area: panel;
-  background: green;
+  display: grid !important;
+  grid-area: panel !important;
 }
 .panel {
   height: 100%;
   width: 100%;
   padding: 30px 50px;
   background: var(--bg-light-gray);
+}
+
+#saving-summary {
+  grid-area: summary;
+}
+#saving-graphs {
+  grid-area: graphs;
+}
+#saving-goals {
+  grid-area: goals;
+  background: orange;
+}
+#recent-activity {
+  grid-area: recent-activity;
+  background: green;
+}
+#expenses {
+  grid-area: expenses;
+  background: black;
+}
+#panel-1 {
+  display: grid;
+  grid-template-areas:
+    "summary recent-activity"
+    "graphs recent-activity"
+    "goals expenses";
+  grid-template-columns: 67% 33%;
+  grid-template-rows: 28% 40% auto;
+  height: 100%;
+  width: 100%;
+}
+#saving-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+  padding: 10px;
+}
+.summary-card {
+  display: grid;
+  grid-template-rows: 50% 25% 25%;
+  padding: 15px 10px;
+  text-align: center;
+  border-radius: 8px;
+  background: var(--bg-light);
+}
+.summary-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--bg-color);
+}
+.summary-icon i {
+  font-size: 22px;
+  color: var(--color-light);
+}
+.summary-data {
+  margin-top: auto;
+  font-size: 18px;
+}
+.summary-title {
+  margin-top: 5px;
+  font-size: 13px;
+  color: var(--color-dark-gray);
+}
+
+#saving-graphs {
+  position: relative;
+  margin: 10px;
+  padding: 5px 10px;
+  background: var(--bg-light);
+  border-radius: 8px;
+}
+#savings-title {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+#transaction-form {
+  margin: 10px;
+  height: 250px;
+  width: 400px;
+  font-family: var(--font-primary);
+  border-radius: 8px;
+  background: var(--bg-light);
+}
+#form-header {
+  padding: 20px;
+  text-align: left;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 8px 8px 0 0;
+  color: var(--color-light);
+  background: var(--bg-primary);
+}
+#category-button {
+  grid-area: category;
+}
+#price-category {
+  grid-area: price;
+}
+#title-container {
+  grid-area: title;
+}
+#submit-button {
+  grid-area: button;
+}
+#form-body {
+  display: grid;
+  grid-template-areas:
+    "category price"
+    "title title"
+    "button button";
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
+  height: 100%;
+  width: 100%;
+}
+#category-button {
+  cursor: pointer;
+}
+#category-container {
+  display: none;
+}
+
+#panel-1,
+#panel-2,
+#panel-3,
+#panel-4,
+#panel-5 {
+  display: none;
 }
