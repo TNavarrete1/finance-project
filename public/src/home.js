@@ -26,6 +26,9 @@ const modal = () => {
 const checkUser = () => {
   // Html elements
   const profileIcon = document.getElementById("profile-icon");
+  if (!profileIcon) {
+    return;
+  }
   const caretIcon = profileIcon.lastElementChild;
   const profileDropdownMenu = document.getElementById("profile-dropdown-menu");
   const toggleDropdownMenu = () => {

@@ -90,7 +90,6 @@ export const login = async (req, res, next) => {
         role: user.role,
       });
     } else {
-      console.log(user);
       res.status(401).json({
         message: "Email or password is incorrect",
         error: "User not found",

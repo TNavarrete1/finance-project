@@ -1,5 +1,5 @@
 // Sets theme
-export const setTheme = (themeName) => {
+const setTheme = (themeName) => {
   const body = document.querySelector("body");
   localStorage.setItem("theme", themeName);
   if (themeName === "theme-dark") {
@@ -8,7 +8,7 @@ export const setTheme = (themeName) => {
   }
   body.className = themeName;
 };
-export const toggleTheme = () => {
+const toggleTheme = () => {
   const themes = document.querySelectorAll(".themes");
   const themeToggle = document.querySelectorAll(".theme-toggle");
   const handleThemeToggle = (e) => {
@@ -56,3 +56,5 @@ const main = function () {
 };
 
 main();
+
+export { toggleTheme };

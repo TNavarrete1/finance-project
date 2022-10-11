@@ -39,7 +39,7 @@
             <div id="data-filter">
               <i class="fa-regular fa-calendar"></i>
               <div id="filter-picker">
-                <span id="filter-text">7 days</span>
+                <span id="filter-text">Yesterday</span>
                 <i class="fa-solid fa-chevron-down"></i>
               </div>
             </div>
@@ -54,6 +54,96 @@
             <a href="/logout" class="circle-options">
               <i class="fa-solid fa-arrow-right-from-bracket"></i>
             </a>
+
+            <div
+              id="calender"
+              style="
+                --calender-base-height: 350px;
+                --calender-max-height: 436px;
+                --calender-height: 350px;
+                --calender-width: 300px;
+              "
+            >
+              <ul id="month-list">
+                <li><span data-month="0">January</span></li>
+                <li><span data-month="01">February</span></li>
+                <li><span data-month="02">March</span></li>
+                <li><span data-month="03">April</span></li>
+                <li><span data-month="04">May</span></li>
+                <li><span data-month="05">June</span></li>
+                <li><span data-month="06">July</span></li>
+                <li><span data-month="07">August</span></li>
+                <li><span data-month="08">September</span></li>
+                <li><span data-month="09">October</span></li>
+                <li><span data-month="10">November</span></li>
+                <li><span data-month="11">December</span></li>
+              </ul>
+              <div
+                id="month"
+                style="
+                  --grid-columns: 7;
+                  --grid-rows: 6;
+                  --grid-width: 300px;
+                  --grid-height: 250px;
+                  --grid-gap: 3px;
+                "
+              >
+                <header id="month-header">
+                  <div id="header-info-container">
+                    <button id="prev-month-button">
+                      <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <h1 id="month-button">
+                      <span id="month-title"></span>
+                      <span id="year-title">2022</span>
+                    </h1>
+                    <button id="next-month-button">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                  </div>
+                  <ul>
+                    <li>Sun</li>
+                    <li>Mon</li>
+                    <li>Tue</li>
+                    <li>Wed</li>
+                    <li>Thu</li>
+                    <li>Fri</li>
+                    <li>Sat</li>
+                  </ul>
+                </header>
+                <div id="days-container">
+                  <div
+                    id="days-sliding-window"
+                    style="
+                      --sliding-window-transition: none;
+                      --sliding-window-transform: none;
+                    "
+                  >
+                    <ul class="days-list" data-list-for-month="0"></ul>
+                    <ul class="days-list" data-list-for-month="1"></ul>
+                    <ul class="days-list" data-list-for-month="2"></ul>
+                    <ul class="days-list" data-list-for-month="3"></ul>
+                    <ul class="days-list" data-list-for-month="4"></ul>
+                    <ul class="days-list" data-list-for-month="5"></ul>
+                    <ul class="days-list" data-list-for-month="6"></ul>
+                    <ul class="days-list" data-list-for-month="7"></ul>
+                    <ul class="days-list" data-list-for-month="8"></ul>
+                    <ul class="days-list" data-list-for-month="9"></ul>
+                    <ul class="days-list" data-list-for-month="10"></ul>
+                    <ul class="days-list" data-list-for-month="11"></ul>
+                  </div>
+                </div>
+                <div id="month-footer">
+                  <ul id="filter-list">
+                    <li data-filter="1" class="filter-active">1 day</li>
+                    <li data-filter="7">7 days</li>
+                    <li data-filter="14">14 days</li>
+                    <li data-filter="0">1 month</li>
+                  </ul>
+                  <button id="set-filter-button">Set Filter</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </header>
@@ -66,24 +156,106 @@
           <i class="fa-solid fa-gauge"></i>
         </div>
         <div id="savings-list" class="sidebar-icon" data-panel="2">
-          <i class="fa-solid fa-receipt"></i>
+          <i class="fa-solid fa-square-plus"></i>
         </div>
         <div id="savings-goals" class="sidebar-icon" data-panel="3">
           <i class="fa-solid fa-piggy-bank"></i>
         </div>
-        <div id="account" class="sidebar-icon" data-panel="4">
-          <i class="fa-solid fa-wallet"></i>
-        </div>
-        <div id="settings" class="sidebar-icon" data-panel="5">
+        <div id="settings" class="sidebar-icon" data-panel="4">
           <i class="fa-solid fa-gear"></i>
         </div>
       </div>
-      <div id="panel-1" class="panel panel-open">panel 1</div>
-      <div id="panel-2" class="panel">panel 2</div>
+      <div id="panel-1" class="panel panel-open">
+        <div id="saving-summary">
+          <div class="summary-card">
+            <span class="summary-icon" style="--bg-color: var(--color-green)">
+              <i class="fa-solid fa-sack-dollar"></i>
+            </span>
+            <span class="summary-data">$20,000</span
+            ><span class="summary-title">Total balance</span>
+          </div>
+          <div class="summary-card">
+            <span class="summary-icon" style="--bg-color: var(--color-orange)">
+              <i class="fa-solid fa-piggy-bank"></i>
+            </span>
+            <span class="summary-data">$440</span
+            ><span class="summary-title">Net savings</span>
+          </div>
+          <div class="summary-card">
+            <span class="summary-icon" style="--bg-color: var(--color-red)">
+              <i class="fa-solid fa-scale-unbalanced"></i>
+            </span>
+            <span class="summary-data">23%</span
+            ><span class="summary-title">Expenses to saving ratio</span>
+          </div>
+          <div class="summary-card">
+            <span class="summary-icon" style="--bg-color: var(--color-yellow)">
+              <i class="fa-solid fa-money-bill-trend-up"></i>
+            </span>
+            <span class="summary-data">5%</span
+            ><span class="summary-title">Savings growth</span>
+          </div>
+        </div>
+        <div id="saving-graphs">
+          <!-- <div>summary graph (line-graph)</div>
+          <div>summary of spending/saving by category (donut-graph)</div> -->
+          <div id="savings-title">Net Savings</div>
+          <canvas id="myChart"></canvas>
+        </div>
+        <div id="saving-goals">
+          <div>goal 1</div>
+          <div>goal 2</div>
+        </div>
+        <div id="recent-activity">Recent spending/saving</div>
+        <div id="expenses">Top expenses</div>
+      </div>
+      <div id="panel-2" class="panel">
+        <form
+          action="/api/transactions/create"
+          method="post"
+          id="transaction-form"
+        >
+          <header id="form-header">New Transaction</header>
+          <div id="form-body">
+            <button type="button" id="category-button">
+              <span>choose category</span>
+              <i class="fa-solid fa-angle-down"></i>
+            </button>
+            <div id="category-container">
+              <label for="category" id="category-label"></label>
+              <p>Category</p>
+            </div>
+            <div id="price-container">
+              <label for="price" id="price-label"></label>
+              <input
+                type="number"
+                id="price"
+                name="price"
+                placeholder="Enter price:"
+              />
+            </div>
+            <div id="title-container">
+              <label for="title" id="title-label"></label>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="Enter title: "
+              />
+            </div>
+            <button type="submit" id="submit-button">Create</button>
+          </div>
+        </form>
+      </div>
       <div id="panel-3" class="panel">panel 3</div>
       <div id="panel-4" class="panel">panel 4</div>
-      <div id="panel-5" class="panel">panel 5</div>
     </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.2/chart.min.js"
+      integrity="sha512-zjlf0U0eJmSo1Le4/zcZI51ks5SjuQXkU0yOdsOBubjSmio9iCUp8XPLkEAADZNBdR9crRy3cniZ65LF2w8sRA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script type="module" src="/src/shared.js"></script>
     <script type="module" src="/src/dashboard.js"></script>
   </body>
